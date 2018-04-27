@@ -10,6 +10,11 @@ node_js:
   - 9.9 #9.5.0
 
 build:
+  pre_ci_boot:
+    image_name: drydock/u14nodall
+    image_tag: master
+    pull: true
+    
   ci:
     - node --version
     - docker pull shippabledocker/sample_node_pvt:ecr
